@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,31 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom theme colors
+				nature: {
+					50: '#f5f8f5',
+					100: '#e0ebe0',
+					200: '#c1d8c3',
+					300: '#a6c09e',
+					400: '#7fa47a',
+					500: '#2D5E40', // Primary green
+					600: '#284d36',
+					700: '#1f3c2a',
+					800: '#16291d',
+					900: '#0c1510',
+				},
+				earth: {
+					100: '#f7f2ea',
+					200: '#e8d0b3',
+					300: '#d6bc91',
+					400: '#c59f72', // Warm brown accent
+					500: '#aa7d51',
+					600: '#846042',
+					700: '#5e4430',
+					800: '#3a2a1e',
+					900: '#1a130e',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +109,40 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'reveal': {
+					'0%': { transform: 'scaleX(0)' },
+					'100%': { transform: 'scaleX(1)' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-500px 0' },
+					'100%': { backgroundPosition: '500px 0' }
+				},
+				'pulse-light': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out forwards',
+				'fade-in-up': 'fade-in-up 0.7s ease-out forwards',
+				'reveal': 'reveal 0.8s ease-in-out forwards',
+				'shimmer': 'shimmer 3s infinite linear',
+				'pulse-light': 'pulse-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+			},
+			fontFamily: {
+				sans: ['Inter var', 'Inter', 'sans-serif'],
+				display: ['Cera Pro', 'Inter', 'sans-serif']
 			}
 		}
 	},
