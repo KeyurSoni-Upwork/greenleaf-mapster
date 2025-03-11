@@ -7,10 +7,11 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 px-4">
       <div className="absolute inset-0 bg-gradient-to-b from-nature-50/50 to-white z-0"></div>
       
+      {/* Background image - fixing URL and increasing opacity */}
       <div 
-        className="absolute inset-0 z-0 opacity-10"
+        className="absolute inset-0 z-0 opacity-20"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1536195892759-c8a3c8acd89d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1536195892759-c8a3c8acd89d?q=80&w=2340')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(2px)'
@@ -55,10 +56,11 @@ const Hero: React.FC = () => {
         
         <div className="w-full md:w-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
           <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-nature-200/50 border border-white/50">
+            {/* Main product image - fixing URL */}
             <div 
               className="absolute inset-0 bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1585669060258-2dc6a3979dc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')"
+                backgroundImage: "url('https://images.unsplash.com/photo-1585669060258-2dc6a3979dc7?q=80&w=1280')"
               }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>

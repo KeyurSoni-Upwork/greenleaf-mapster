@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import AnimatedText from './AnimatedText';
 
-// Sample product data
+// Sample product data with updated image URLs
 const PRODUCTS = [
   {
     id: 1,
     name: "Premium Bud Collection",
     description: "Our finest selection of premium flower, carefully cultivated for maximum potency and flavor profile.",
-    image: "https://images.unsplash.com/photo-1585669060258-2dc6a3979dc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    image: "https://images.unsplash.com/photo-1585669060258-2dc6a3979dc7?q=80&w=1280",
     category: "flower",
     price: 49.99,
     rating: 4.9,
@@ -19,7 +19,7 @@ const PRODUCTS = [
     id: 2,
     name: "Relaxation Tincture",
     description: "A balanced CBD/THC tincture designed to provide relief and relaxation without the intense high.",
-    image: "https://images.unsplash.com/photo-1579091372931-309dd6daaa7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1579091372931-309dd6daaa7d?q=80&w=1280",
     category: "tincture",
     price: 39.99,
     rating: 4.7,
@@ -29,7 +29,7 @@ const PRODUCTS = [
     id: 3,
     name: "Energizing Edibles",
     description: "Delicious gummies infused with sativa-dominant strains to provide an uplifting and energetic experience.",
-    image: "https://images.unsplash.com/photo-1578522304830-1a4749855ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1578522304830-1a4749855ce7?q=80&w=1280",
     category: "edible",
     price: 24.99,
     rating: 4.5,
@@ -39,7 +39,7 @@ const PRODUCTS = [
     id: 4,
     name: "Ultimate Vape Cartridge",
     description: "High-potency vape cartridges made with premium distillate and natural terpenes for a smooth experience.",
-    image: "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?q=80&w=1280",
     category: "vape",
     price: 34.99,
     rating: 4.8,
@@ -49,7 +49,7 @@ const PRODUCTS = [
     id: 5,
     name: "Calming Topical Cream",
     description: "Fast-acting topical cream with a blend of CBD and botanical extracts to soothe muscle aches and pains.",
-    image: "https://images.unsplash.com/photo-1595954426700-280d446b1dbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1595954426700-280d446b1dbd?q=80&w=1280",
     category: "topical",
     price: 29.99,
     rating: 4.6,
@@ -59,7 +59,7 @@ const PRODUCTS = [
     id: 6,
     name: "Concentrate Collection",
     description: "High-potency concentrates for experienced users looking for maximum effect and flavor intensity.",
-    image: "https://images.unsplash.com/photo-1556928045-16f7f50be0f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1556928045-16f7f50be0f3?q=80&w=1280",
     category: "concentrate",
     price: 54.99,
     rating: 4.9,
