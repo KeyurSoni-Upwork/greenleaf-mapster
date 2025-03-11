@@ -1,9 +1,13 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import AnimatedText from './AnimatedText';
 
-// Sample distribution center locations
+declare global {
+  interface Window {
+    google: any;
+  }
+}
+
 const DISTRIBUTION_CENTERS = [
   { id: 1, name: "Denver HQ", lat: 39.7392, lng: -104.9903, address: "1234 Cannabis Ave, Denver, CO 80202" },
   { id: 2, name: "Portland Center", lat: 45.5152, lng: -122.6784, address: "5678 Green St, Portland, OR 97201" },
@@ -21,11 +25,9 @@ const LocationMap: React.FC = () => {
   const [mapInitialized, setMapInitialized] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Initialize and load the Google Maps API
   useEffect(() => {
-    // This is a function to load the Google Maps API script
     const loadGoogleMapsApi = () => {
-      const googleMapsApiKey = ""; // Intentionally left blank - no API key required for basic map display
+      const googleMapsApiKey = "";
       const script = document.createElement('script');
       script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places`;
       script.async = true;
@@ -38,16 +40,15 @@ const LocationMap: React.FC = () => {
       };
     };
 
-    // Initialize the map once the API is loaded
     const initializeMap = () => {
-      if (!mapRef.current || window.google === undefined) return;
+      if (!mapRef.current || typeof window.google === 'undefined') return;
       
       setIsLoading(false);
       
       const mapOptions = {
-        center: { lat: 39.8283, lng: -98.5795 }, // Center of the US
+        center: { lat: 39.8283, lng: -98.5795 },
         zoom: 4,
-        mapTypeId: 'hybrid', // Use satellite imagery with road labels
+        mapTypeId: 'hybrid',
         styles: [
           { featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] },
           { featureType: "administrative", elementType: "labels", stylers: [{ visibility: "on" }] },
@@ -56,30 +57,29 @@ const LocationMap: React.FC = () => {
         ],
         mapTypeControl: true,
         mapTypeControlOptions: {
-          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-          position: google.maps.ControlPosition.TOP_RIGHT,
+          style: window.google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+          position: window.google.maps.ControlPosition.TOP_RIGHT,
         },
         fullscreenControl: true,
         streetViewControl: false,
         zoomControl: true,
         zoomControlOptions: {
-          position: google.maps.ControlPosition.RIGHT_CENTER,
+          position: window.google.maps.ControlPosition.RIGHT_CENTER,
         },
       };
       
-      const map = new google.maps.Map(mapRef.current, mapOptions);
+      const map = new window.google.maps.Map(mapRef.current, mapOptions);
       
-      // Add markers for each distribution center
-      const infoWindow = new google.maps.InfoWindow();
+      const infoWindow = new window.google.maps.InfoWindow();
       
       DISTRIBUTION_CENTERS.forEach((center) => {
-        const marker = new google.maps.Marker({
+        const marker = new window.google.maps.Marker({
           position: { lat: center.lat, lng: center.lng },
           map,
           title: center.name,
-          animation: google.maps.Animation.DROP,
+          animation: window.google.maps.Animation.DROP,
           icon: {
-            path: google.maps.SymbolPath.CIRCLE,
+            path: window.google.maps.SymbolPath.CIRCLE,
             scale: 10,
             fillColor: "#2D5E40",
             fillOpacity: 0.7,
@@ -101,7 +101,6 @@ const LocationMap: React.FC = () => {
         });
       });
       
-      // Add a custom Earth rotation control
       const controlDiv = document.createElement("div");
       controlDiv.style.padding = "10px";
       
@@ -129,9 +128,8 @@ const LocationMap: React.FC = () => {
         controlText.innerHTML = map.getMapTypeId() === 'roadmap' ? "3D View" : "2D View";
       });
       
-      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+      map.controls[window.google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
       
-      // Set map initialization state
       setMapInitialized(true);
     };
 
@@ -149,7 +147,7 @@ const LocationMap: React.FC = () => {
           />
           <AnimatedText
             tag="p"
-            text="Explore our network of distribution centers across the United States. Visit a location near you or get directions for easy access to premium products."
+            text="Explore our network of distribution centers across the United States. Visit a location near you or get directions for premium products."
             className="text-muted-foreground text-lg"
             delay={200}
           />

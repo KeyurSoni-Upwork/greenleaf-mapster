@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 z-0 opacity-10"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1536819114556-1e10f967fb61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1536195892759-c8a3c8acd89d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(2px)'
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto relative z-10 flex flex-col md:flex-row items-center gap-10 md:gap-20">
         <div className="w-full md:w-1/2 space-y-6 md:pr-10">
-          <div className="inline-block rounded-full bg-nature-100 px-4 py-1.5 text-sm font-medium text-nature-600 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <div className="inline-block rounded-full bg-nature-100 px-4 py-1.5 text-sm font-medium text-nature-600 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
             Premium Quality Products
           </div>
           
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
             delay={400}
           />
           
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
             <a 
               href="#products" 
               className="btn-hover-effect px-8 py-3 bg-nature-500 text-white font-medium rounded-md inline-flex items-center justify-center transition-all hover:bg-nature-600"
@@ -53,12 +53,12 @@ const Hero: React.FC = () => {
           </div>
         </div>
         
-        <div className="w-full md:w-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+        <div className="w-full md:w-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
           <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-nature-200/50 border border-white/50">
             <div 
               className="absolute inset-0 bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1603909223429-69bb7209e90e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80')"
+                backgroundImage: "url('https://images.unsplash.com/photo-1585669060258-2dc6a3979dc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')"
               }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>

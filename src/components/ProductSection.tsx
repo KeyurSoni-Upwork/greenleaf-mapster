@@ -9,7 +9,7 @@ const PRODUCTS = [
     id: 1,
     name: "Premium Bud Collection",
     description: "Our finest selection of premium flower, carefully cultivated for maximum potency and flavor profile.",
-    image: "https://images.unsplash.com/photo-1603909223429-69bb7209e90e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1585669060258-2dc6a3979dc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
     category: "flower",
     price: 49.99,
     rating: 4.9,
@@ -19,7 +19,7 @@ const PRODUCTS = [
     id: 2,
     name: "Relaxation Tincture",
     description: "A balanced CBD/THC tincture designed to provide relief and relaxation without the intense high.",
-    image: "https://images.unsplash.com/photo-1590114071263-a9c37dab41d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1579091372931-309dd6daaa7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
     category: "tincture",
     price: 39.99,
     rating: 4.7,
@@ -29,7 +29,7 @@ const PRODUCTS = [
     id: 3,
     name: "Energizing Edibles",
     description: "Delicious gummies infused with sativa-dominant strains to provide an uplifting and energetic experience.",
-    image: "https://images.unsplash.com/photo-1611071643078-bc2a50b8a473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1578522304830-1a4749855ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
     category: "edible",
     price: 24.99,
     rating: 4.5,
@@ -39,7 +39,7 @@ const PRODUCTS = [
     id: 4,
     name: "Ultimate Vape Cartridge",
     description: "High-potency vape cartridges made with premium distillate and natural terpenes for a smooth experience.",
-    image: "https://images.unsplash.com/photo-1581800457786-2382f02c3411?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
     category: "vape",
     price: 34.99,
     rating: 4.8,
@@ -49,7 +49,7 @@ const PRODUCTS = [
     id: 5,
     name: "Calming Topical Cream",
     description: "Fast-acting topical cream with a blend of CBD and botanical extracts to soothe muscle aches and pains.",
-    image: "https://images.unsplash.com/photo-1633101999699-20ccaa7f4e42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1595954426700-280d446b1dbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
     category: "topical",
     price: 29.99,
     rating: 4.6,
@@ -59,7 +59,7 @@ const PRODUCTS = [
     id: 6,
     name: "Concentrate Collection",
     description: "High-potency concentrates for experienced users looking for maximum effect and flavor intensity.",
-    image: "https://images.unsplash.com/photo-1599698000905-8efa5a1a487d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
+    image: "https://images.unsplash.com/photo-1556928045-16f7f50be0f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80",
     category: "concentrate",
     price: 54.99,
     rating: 4.9,
@@ -125,10 +125,10 @@ const ProductSection: React.FC = () => {
           {filteredProducts.map((product, index) => (
             <div 
               key={product.id}
-              className="group rounded-xl soft-border bg-white shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="group rounded-xl soft-border bg-white shadow-sm overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md opacity-0 animate-fade-in"
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
-              style={{ animationDelay: `${index * 100}ms` }}
+              style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
             >
               <div className="aspect-[4/3] relative overflow-hidden">
                 <img 
